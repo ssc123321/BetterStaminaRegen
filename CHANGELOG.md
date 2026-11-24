@@ -1,0 +1,7 @@
+# Changelog
+
+## 1.0.0
+
+- Initial release.
+- Natural stamina regeneration up to 50% faster (configurable, capped at 50%).
+- Wait before regeneration up to 50% shorter (configurable, capped at 50%).

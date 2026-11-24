@@ -1,0 +1,7 @@
+{
+  "name": "BetterStaminaRegen",
+  "version_number": "1.0.0",
+  "website_url": "https://github.com/ssc123321/BetterStaminaRegen",
+  "description": "Stamina regenerates up to 50% faster and the wait after using stamina is up to 50% shorter. Both values are configurable.",
+  "dependencies": []
+}
