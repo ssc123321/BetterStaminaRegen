@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.1
+
+- Store page cleanup: the description shown on Thunderstore is now the bilingual
+  `DESCRIPTION.md` (Chinese first), without internal notes.
+- No code changes.
+
 ## 1.0.0
 
 - Initial release.

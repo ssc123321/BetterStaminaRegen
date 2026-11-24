@@ -1,9 +1,4 @@
-# 雷霆商店介绍页文案
-
-> 复制到 Thunderstore 的 **Description**（Markdown 支持）。
-> 开头的三行是钩子文案，下面的中英文介绍按顺序粘贴。
-
----
+# Better Stamina Regeneration
 
 ## 中文
 
@@ -95,10 +90,3 @@ Set both to `0` for vanilla behaviour without uninstalling the mod.
 - Client-side mod: only you need to install it
 - Multiplayer-safe: no network data is modified
 
----
-
-## 分类选择（上传时勾选）
-
-- **AI生成**（AI Generated）
-- **客户端模组**（Client-side）
-- **生活质量调整**（Quality of Life）

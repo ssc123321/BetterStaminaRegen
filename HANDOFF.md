@@ -20,9 +20,10 @@
 | BepInEx GUID | `abuf.betterstaminaregen` |
 | 作者 | ABUF |
 | 目标框架 | `net472` |
-| 当前版本 | 1.0.0 |
+| 当前版本 | 1.0.1 |
 | 依赖 | BepInEx 5（插件本身无其它模组依赖） |
 | GitHub 仓库 | <https://github.com/ssc123321/BetterStaminaRegen>（`main` 分支） |
+| 雷霆商店 | <https://thunderstore.io/c/peak/p/ABUF/BetterStaminaRegen/> |
 
 ## 功能
 
@@ -73,11 +74,14 @@ $env:PEAK_BEPINEX_CORE = "…\BepInEx\core"     # 含 BepInEx.dll / 0Harmony.dll
   .NET Framework 4.7.2 Developer Pack）
 - `build.ps1` 会产出 `dist/BetterStaminaRegen-<版本>.zip`，结构为
   `BepInEx/plugins/BetterStaminaRegen/BetterStaminaRegen.dll`，可直接上传雷霆商店
+- 雷霆商店的介绍页正文 = **包内 `README.md`**；`build.ps1` 有 `DESCRIPTION.md` 时
+  就把 `DESCRIPTION.md` 打包成 `README.md`（中文在前、英文在后），仓库根目录的
+  `README.md` 只给 GitHub 看
 - 打包时**不包含** pdb（pdb 里带本机源码路径）、bin、obj、dist
 
 ## 发布前检查
 
-- `manifest.json` 的 `website_url` 改成真实 GitHub 仓库地址
+- `manifest.json` 的 `website_url` 已是真实 GitHub 仓库地址
 - `icon.png` 必须是 256×256
 - 版本号同时改 `manifest.json`、`csproj`、`Plugin.PluginVersion`、`CHANGELOG.md`
 - 确认 zip 里没有任何本机路径 / 用户名 / 邮箱

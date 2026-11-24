@@ -10,7 +10,7 @@ namespace ABUF.BetterStaminaRegen
     {
         public const string Guid = "abuf.betterstaminaregen";
         public const string PluginName = "Better Stamina Regeneration";
-        public const string PluginVersion = "1.0.0";
+        public const string PluginVersion = "1.0.1";
 
         public static Plugin Instance;
         public static ManualLogSource Log;

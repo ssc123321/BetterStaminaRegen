@@ -89,14 +89,19 @@ LICENSE
 
 ## 4. Thunderstore 上传
 
-1. 打开 <https://thunderstore.io/c/peak/>，登录并选择团队（Team）
-2. **Upload** → 选择 `dist/BetterStaminaRegen-1.0.0.zip`
+1. 打开 <https://thunderstore.io/package/create/>，登录
+2. **Upload file** → 选择 `dist/BetterStaminaRegen-<版本>.zip`
 3. 填写：
-   - **Name**：`BetterStaminaRegen`
-   - **Version**：`1.0.0`（必须与 manifest 一致）
-   - **Description**：粘贴 `DESCRIPTION.md` 里的钩子三行 + 中英文正文
-   - **Categories**：`AI Generated`、`Client-side`、`Quality of Life`
-4. 提交后 PEAK 社区**通常需要管理员审核**才公开，审核期间可在你的 profile 看到
+   - **Team**：`ABUF`（首次上传前要先在 <https://thunderstore.io/teams/> 建团队；
+     页面上 “No teams available?” 只是常驻提示，下拉里其实有 ABUF）
+   - **Communities**：`PEAK`
+   - **Categories**：`AI Generated`、`Client Side`、`Quality Of Life`
+   - **NSFW**：`No`
+4. 提交后如果版本号已存在会被拒绝；PEAK 社区可能需要审核后才公开
+
+> 新界面**没有** Description 输入框：商店页正文取的是包内 `README.md`。
+> `build.ps1` 已经把 `DESCRIPTION.md` 打包成 `README.md`，所以只要文案写进
+> `DESCRIPTION.md` 即可，中英文都在里面，中文在前。
 
 ## 5. 每次发新版本
 
@@ -113,8 +118,8 @@ LICENSE
 
 ## 6. 发布前自检
 
-- [ ] `manifest.json` 的 `website_url` 已更新
-- [ ] `icon.png` 是 256×256
+- [x] `manifest.json` 的 `website_url` 已指向真实仓库
+- [x] `icon.png` 是 256×256
 - [ ] zip 内无 `bin/ / obj/ / *.pdb`
 - [ ] DLL 与文档里搜不到 `C:\Users`、`AppData`、用户名、邮箱
 - [ ] 游戏里实测过：体力回体变快、等待变短
