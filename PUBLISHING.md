@@ -2,50 +2,65 @@
 
 > 本文件给「新工作区 / 新会话」用。代码与打包已就绪，下面只剩账号与发布动作。
 
-## 0. 需要替换的占位符
+## 0. 仓库信息（已确定）
 
-| 位置 | 当前内容 | 要改成 |
-|---|---|---|
-| `manifest.json` → `website_url` | `https://github.com/ABUF/BetterStaminaRegen` | 你的最终 GitHub 仓库地址 |
-| `README.md` → 构建说明 | 无个人信息 | 检查一遍，不要写本机路径 |
+| 项 | 值 |
+|---|---|
+| GitHub 账号 | `ssc123321`（改名方案已放弃：`ABUF` 已被他人占用） |
+| 仓库 | <https://github.com/ssc123321/BetterStaminaRegen> |
+| `manifest.json` → `website_url` | 同上，已写入 |
+| 提交身份 | `ABUF <148782431+ssc123321@users.noreply.github.com>` |
+| 默认分支 | `main` |
 
 ---
 
 ## 1. GitHub 用户名与隐私
 
-1. GitHub → **Settings → Account → Change username**
-   - 旧用户名会释放，GitHub 对旧用户名/旧仓库链接保留一段时间重定向
-   - 改完后本地仓库的 remote 需要更新：`git remote set-url origin <新地址>`
+1. 用户名保持 `ssc123321`（`ABUF` 已被 2017 年注册的另一个账号占用，不可用）。
+   - 如果将来仍想改名，注意：旧用户名会被释放，别人可能抢注，所有仓库链接都会变，
+     noreply 邮箱的 `+<username>` 部分也会跟着变。
 2. **隐私加固**
-   - Settings → Emails → 勾选 **Keep my email addresses private**
-   - 使用 GitHub 提供的 noreply 邮箱：`<ID>+<username>@users.noreply.github.com`
-   - 本地配置：
+   - Settings → Emails → 勾选 **Keep my email addresses private**（本账号已勾选）
+   - 提交只用 GitHub 提供的 noreply 邮箱：`<ID>+<username>@users.noreply.github.com`
+   - 本地配置（仓库级，不写全局）：
      ```
      git config user.name "ABUF"
-     git config user.email "<ID>+<username>@users.noreply.github.com"
+     git config user.email "148782431+ssc123321@users.noreply.github.com"
      ```
-3. 如果旧提交已经推过且含真实邮箱，用 `git filter-repo --mail-map` 重写历史后再强推；
-   本项目是全新仓库，直接按上面配置即可，无需重写。
+3. 本项目是全新仓库，首个提交从零开始，不含任何真实邮箱，无需重写历史。
 
 ---
 
 ## 2. 创建仓库并首次推送
 
+仓库已创建并完成首次推送（提交 `Initial release: Better Stamina Regeneration 1.0.0`）。
+
+以后新机器上的完整流程：
+
 ```powershell
-cd DSH_PEAK_mod
-git init
+git init -b main
 git config user.name "ABUF"
-git config user.email "<ID>+<username>@users.noreply.github.com"
+git config user.email "148782431+ssc123321@users.noreply.github.com"
 
-git add .
+git add -A
 git commit -m "Initial release: Better Stamina Regeneration 1.0.0"
-
-git branch -M main
-git remote add origin https://github.com/<username>/BetterStaminaRegen.git
+git remote add origin https://github.com/ssc123321/BetterStaminaRegen.git
 git push -u origin main
 ```
 
-> 仓库名建议 `BetterStaminaRegen`，与 `manifest.json` 的 `name` 保持一致。
+> 仓库名 `BetterStaminaRegen`，与 `manifest.json` 的 `name` 保持一致。
+
+**推送认证**（这台机器没有存任何 GitHub 凭据，也没有 SSH key）：
+
+- 临时方案：在 GitHub → Settings → Developer settings → Personal access tokens (classic)
+  建一个 `public_repo` 权限、短期有效的 token，推送时用
+  `git push https://x-access-token:<TOKEN>@github.com/ssc123321/BetterStaminaRegen.git main:main`，
+  推完立刻删除 token（不要写进 `.git/config`）。
+- 长期方案：配一次 Git Credential Manager 或 SSH key，之后 `git push` 免密。
+
+**网络**：直连 `github.com:443` 会被重置，需要走本机代理（系统代理），
+并让 git 用 OpenSSL 后端，例如：
+`git -c http.proxy=http://127.0.0.1:<port> -c http.sslBackend=openssl push <url> main:main`
 
 ---
 

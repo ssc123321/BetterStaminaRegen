@@ -22,6 +22,7 @@
 | 目标框架 | `net472` |
 | 当前版本 | 1.0.0 |
 | 依赖 | BepInEx 5（插件本身无其它模组依赖） |
+| GitHub 仓库 | <https://github.com/ssc123321/BetterStaminaRegen>（`main` 分支） |
 
 ## 功能
 
