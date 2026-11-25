@@ -69,4 +69,9 @@
     <Compile Remove="refs/**" />
   </ItemGroup>
 
+  <ItemGroup>
+    <!-- mods/ 下是其它独立模组，不参与本项目编译 -->
+    <Compile Remove="mods/**" />
+  </ItemGroup>
+
 </Project>

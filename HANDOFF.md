@@ -102,3 +102,25 @@ $env:PEAK_BEPINEX_CORE = "…\BepInEx\core"     # 含 BepInEx.dll / 0Harmony.dll
   才需要装 .NET Framework 4.7.2 Developer Pack。
 - `Character.AddStamina` 会被多处调用（食物/士气/被动），务必保留"仅自然回体"的上下文判断，
   否则会把所有回体一起放大。
+
+## 工作区里的多个模组
+
+| 目录 | 模组 | 状态 |
+|---|---|---|
+| 根目录 | Better Stamina Regeneration | **已发布**，根目录本身是一个 git 仓库 |
+| `mods/ComaProtect` | 昏迷保护（Coma Protection） | **已发布**，独立仓库 `ssc123321/ComaProtect` |
+| `mods/IdentityRename` | 改身份（Identity Rename） | **已发布**，独立仓库 `ssc123321/IdentityRename` |
+
+| 模组 | GitHub | 雷霆商店 |
+|---|---|---|
+| ComaProtect | <https://github.com/ssc123321/ComaProtect> | <https://thunderstore.io/c/peak/p/ABUF/ComaProtect/> |
+| IdentityRename | <https://github.com/ssc123321/IdentityRename> | <https://thunderstore.io/c/peak/p/ABUF/IdentityRename/> |
+
+说明：
+
+- `mods/` 已加入根仓库的 `.gitignore`，不会混进 BetterStaminaRegen 的仓库
+- `mods/` 下每个项目有自己的 `.gitignore` / `build.ps1` / `manifest.json` / `README.md` / `DESCRIPTION.md` / `LICENSE` / `icon.png`
+- 每个项目是**独立的 git 仓库**，各自推送、各自上传雷霆商店
+- 三个项目构建方式相同：设置 `PEAK_GAME_DIR`、`PEAK_BEPINEX_CORE` 后运行 `./build.ps1`
+- 每个项目的商店页正文都来自包内 `README.md`，由 `build.ps1` 从 `DESCRIPTION.md` 拷贝（中文在前、英文在后）
+

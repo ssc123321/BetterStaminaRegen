@@ -116,7 +116,33 @@ LICENSE
 
 ---
 
-## 6. 发布前自检
+## 7. 子项目（`mods/`）
+
+`mods/` 下每个模组是**独立仓库**，发布流程与根目录相同，只是仓库名不同：
+
+| 项目 | 仓库 | 商店地址 | 分类 |
+|---|---|---|---|
+| `mods/ComaProtect` | <https://github.com/ssc123321/ComaProtect> | <https://thunderstore.io/c/peak/p/ABUF/ComaProtect/> | Client Side、Quality Of Life |
+| `mods/IdentityRename` | <https://github.com/ssc123321/IdentityRename> | <https://thunderstore.io/c/peak/p/ABUF/IdentityRename/> | Client Side、Quality Of Life |
+
+首次推送（每个项目各跑一次）：
+
+```powershell
+cd mods\ComaProtect        # 或 mods\IdentityRename
+git init -b main
+git config user.name "ABUF"
+git config user.email "148782431+ssc123321@users.noreply.github.com"
+git add -A
+git commit -m "Initial release: ComaProtect 1.0.0"
+git remote add origin https://github.com/ssc123321/ComaProtect.git
+git push -u origin main
+```
+
+> 三个仓库互相独立，`mods/` 不会进根仓库（根 `.gitignore` 已排除）。
+
+---
+
+## 8. 发布前自检
 
 - [x] `manifest.json` 的 `website_url` 已指向真实仓库
 - [x] `icon.png` 是 256×256
